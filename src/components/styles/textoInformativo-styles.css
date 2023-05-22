@@ -1,0 +1,14 @@
+.texto-informativo {
+  color: blanchedalmond;
+  line-height: 2.5rem;
+}
+.texto-informativo span {
+  font-family: fantasy;
+  transition: 100ms;
+}
+.texto-informativo .jugadorRojo {
+  color: crimson;
+}
+.texto-informativo .jugadorAzul {
+  color: royalblue;
+}/*# sourceMappingURL=textoInformativo-styles.css.map */

@@ -1,0 +1,28 @@
+.header-container {
+  background-image: url(../../img/yogg-saron.jpg);
+  background-position: 60% 50%;
+  box-shadow: 1px 10px 20px azure;
+  filter: opacity(50);
+}
+.header-container h1 {
+  font-size: 4rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  -webkit-backdrop-filter: drop-shadow(4px 4px 10px blue);
+          backdrop-filter: drop-shadow(4px 4px 10px blue);
+  -webkit-backdrop-filter: blur(1px) grayscale(80%);
+          backdrop-filter: blur(1px) grayscale(80%);
+  color: blanchedalmond;
+  animation: 2s ease-out infinite tinkle;
+}
+
+@keyframes tinkle {
+  0% {
+    filter: opacity(100);
+  }
+  50% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(100);
+  }
+}/*# sourceMappingURL=header-styles.css.map */
