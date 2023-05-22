@@ -1,15 +1,15 @@
 import React from 'react'
 import FichasDelRenglon from "./FichasDelRenglon.jsx"
+import "./styles/board.css"
 
-export default function Board({tokensShowed}   /* classes*/) {
+export default function Board({tokens}) {
     const renglon = []
-    const tokens = () => {
-        for(let y=0; y<6; y++){
+    const aLotOfTokens = () => {
+        for(let x=0; x<7; x++){
             let key=0;
             renglon.push(
                     <FichasDelRenglon
-                        fichas={tokensShowed[y]}
-                        //  /* classes*/={ /* classes*/}
+                        tokens={tokens[x]}
                         key={key++}
                     />
                 
@@ -18,22 +18,9 @@ export default function Board({tokensShowed}   /* classes*/) {
         return(renglon)
     }
 
-    // const tokens = () => {
-    //     return Array.from({ length: 6 }, (v, y) => (
-    //         <div className="columna" key={y}>
-    //             <FichasDelRenglon
-    //                 fichas={tokensShowed[y]}
-    //                  /* classes*/={ /* classes*/}
-    //             />
-    //         </div>
-    //     ));
-    // };
   return (
-    // <div>
-    //     {tokens()}
-    // </div>
-    <div className="board " key={1}>
-        {tokens()}
+    <div className="board d-flex " key={1}>
+        {aLotOfTokens()}
     </div>
   )
 }

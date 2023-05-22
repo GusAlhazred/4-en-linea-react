@@ -3,7 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import Header from "./components/Header"
 import TextoInformativo from "./components/TextoInformativo.jsx"
 import FichasAPoner from "./components/FichasAPoner.jsx"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Board from './components/Board';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
 
   const manageClick = (e) => {
     const btnum = e.target.getAttribute("data-number")
+    // if ((tokens[btnum].length <= 5) && (!checkVitory())){
     if (tokens[btnum].length <= 5){
       tokens[btnum].push(turn%2);
       setTokens(tokens)
@@ -21,6 +22,36 @@ function App() {
       console.log("No se puede")
     }
   }
+
+  // const checkVitory = () => {
+  //   for (let x=0; x<7; x++){
+  //     for(let y=0; y<6; y++){
+  //       if ((tokens [x][y] === tokens [x][y+1]) && (tokens [x][y] === tokens [x][y+2]) && (tokens [x][y] === tokens [x][y+3])){
+  //         return (true)
+  //       }
+  //       if ((tokens [x][y] === tokens [x+1][y]) && (tokens [x][y] === tokens [x+2][y]) && (tokens [x][y] === tokens [x+3][y])){
+  //         return (true)
+  //       }
+  //       if ((tokens [x][y] === tokens [x+1][y+1]) && (tokens [x][y] === tokens [x+2][y+2]) && (tokens [x][y] === tokens [x+3][y+3])){
+  //         return (true)
+  //       }
+  //       if ((tokens [x][y] === tokens [x-1][y+1]) && (tokens [x][y] === tokens [x-2][y+2]) && (tokens [x][y] === tokens [x-3][y+3])){
+  //         return (true)
+  //       }
+  //       return(false)
+  //     }
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   for (let x=0; x<7; x++){
+  //     for(let y=0; y<6; y++){
+  //       if ((tokens [x][y] === tokens [x][y+1]) && (tokens [x][y] === tokens [x][y+2]) && (tokens [x][y] === tokens [x][y+3])){
+  //         console.log("Ganooooo")
+  //       }
+  //     }
+  //   }
+  // },[tokens]);
 
   const classes = turn % 2 === 0 ? "boton boton-azul" : "boton boton-rojo";
   const buttons = [];
@@ -46,7 +77,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App d-flex flex-column align-items-center">
       <Header />
       <TextoInformativo 
         turno= {turn}
@@ -55,8 +86,7 @@ function App() {
         buttons= {buttons}
       />
       <Board
-        tokensShowed= {tokensShowed}
-        // classes={classes}
+        tokens={tokens}
       />
       <button onClick={() => setTurn(turn+1)}>Pasar Turno</button>
       <button onClick={() => setTurn(1)}>Reiniciar</button>
