@@ -3,7 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import Header from "./components/Header"
 import TextoInformativo from "./components/TextoInformativo.jsx"
 import FichasAPoner from "./components/FichasAPoner.jsx"
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Board from './components/Board';
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
 
   const manageClick = (e) => {
     const btnum = e.target.getAttribute("data-number")
-    // if ((tokens[btnum].length <= 5) && (!checkVitory())){
-    if (tokens[btnum].length <= 5){
+    if ((tokens[btnum].length <= 5) && (!checkVitory())){
+    // if (tokens[btnum].length <= 5){
       tokens[btnum].push(turn%2);
       setTokens(tokens)
       setTurn(turn+1)
@@ -23,25 +23,27 @@ function App() {
     }
   }
 
-  // const checkVitory = () => {
-  //   for (let x=0; x<7; x++){
-  //     for(let y=0; y<6; y++){
-  //       if ((tokens [x][y] === tokens [x][y+1]) && (tokens [x][y] === tokens [x][y+2]) && (tokens [x][y] === tokens [x][y+3])){
-  //         return (true)
-  //       }
-  //       if ((tokens [x][y] === tokens [x+1][y]) && (tokens [x][y] === tokens [x+2][y]) && (tokens [x][y] === tokens [x+3][y])){
-  //         return (true)
-  //       }
-  //       if ((tokens [x][y] === tokens [x+1][y+1]) && (tokens [x][y] === tokens [x+2][y+2]) && (tokens [x][y] === tokens [x+3][y+3])){
-  //         return (true)
-  //       }
-  //       if ((tokens [x][y] === tokens [x-1][y+1]) && (tokens [x][y] === tokens [x-2][y+2]) && (tokens [x][y] === tokens [x-3][y+3])){
-  //         return (true)
-  //       }
-  //       return(false)
-  //     }
-  //   }
-  // }
+  const checkVitory = () => {
+    for (let x=0; x<7; x++){
+      for(let y=0; y<6; y++){
+        if(tokens [x][y]!=undefined){
+          if ((tokens [x][y] === tokens [x][y+1]) && (tokens [x][y] === tokens [x][y+2]) && (tokens [x][y] === tokens [x][y+3])){
+            return (true)
+          }
+          if ((tokens [x][y] === tokens [x+1][y]) && (tokens [x][y] === tokens [x+2][y]) && (tokens [x][y] === tokens [x+3][y])){
+            return (true)
+          }
+          if ((tokens [x][y] === tokens [x+1][y+1]) && (tokens [x][y] === tokens [x+2][y+2]) && (tokens [x][y] === tokens [x+3][y+3])){
+            return (true)
+          }
+          if ((tokens [x][y] === tokens [x-1][y+1]) && (tokens [x][y] === tokens [x-2][y+2]) && (tokens [x][y] === tokens [x-3][y+3])){
+            return (true)
+          }
+          return(false)
+        }
+      }
+    }
+  }
 
   // useEffect(() => {
   //   for (let x=0; x<7; x++){
@@ -60,17 +62,16 @@ function App() {
           <button className={classes} data-number={i} onClick={manageClick} key={i}></button>
       )
   }
-  let tokensShowed =[]
-  let ficha= 0;
-  for (let y=0; y<6; y++){
-    tokensShowed.push([])
-    for(let x=0; x<7; x++){
-      tokensShowed[y].push(
-        <div className={classes} key={ficha++}></div>
-      )
-    }
-    console.log(tokens)
-  }
+  // let tokensShowed =[]
+  // let ficha= 0;
+  // for (let y=0; y<6; y++){
+  //   tokensShowed.push([])
+  //   for(let x=0; x<7; x++){
+  //     tokensShowed[y].push(
+  //       <div className={classes} key={ficha++}></div>
+  //     )
+  //   }
+  // }
   
   
   
