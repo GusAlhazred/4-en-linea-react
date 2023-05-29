@@ -17,6 +17,14 @@
     opacity: 100%;
   }
 }
+@keyframes error {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+}
 @keyframes tinkle {
   0% {
     filter: opacity(100);
@@ -26,6 +34,14 @@
   }
   100% {
     filter: opacity(100);
+  }
+}
+@keyframes goUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200px);
   }
 }
 .texto-informativo {
@@ -51,4 +67,18 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.671);
   animation: winner 0.2s linear;
+}
+
+.texto-error {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.671);
+  animation: error 0.2s linear;
+}
+
+.goUp {
+  animation: goUp 1s linear;
 }/*# sourceMappingURL=textoInformativo-styles.css.map */

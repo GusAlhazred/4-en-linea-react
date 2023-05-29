@@ -6,12 +6,15 @@ import FichasAPoner from "./components/FichasAPoner.jsx"
 import { useState /*, useEffect, /*useRef*/ } from 'react';
 import Board from './components/Board';
 import VictoryMessage from "./components/VictoryMessage.jsx"
+import ErrorMessage from "./components/ErrorMessage.jsx"
 
 function App() {
 
   const [turn, setTurn] = useState(1);
   const [tokens, setTokens] = useState([[], [], [], [], [], [], []]);
   const [end, setEnd] = useState(false);
+  const [wrong, setWrong] = useState(false)
+  const timer = 500;
   
   const checkVitory = () => {
     for (let x=0; x< tokens.length; x++){
@@ -40,7 +43,6 @@ function App() {
     }
     return(end)
   }
-
   
   const manageClick = (e) => {
     const btnum = e.target.getAttribute("data-number")
@@ -50,7 +52,10 @@ function App() {
       setTurn(turn+1)
       checkVitory()
     } else{
-      console.log("No se puede")
+      setWrong(true)
+      setTimeout( () => {
+        setWrong(false)
+      }, timer)
     }
   }
 
@@ -68,7 +73,6 @@ function App() {
     setEnd(false);
     setTurn(1);
     setTokens([[], [], [], [], [], [], []]);
-
   }
   
   
@@ -90,10 +94,10 @@ function App() {
                 turn={turn}
                 end={end}
                 onClick={manageReset}
-              />
-              }
-      
-      
+              />}
+      {wrong && <ErrorMessage 
+                turn={turn}
+              />}
     </div>
   );
 }

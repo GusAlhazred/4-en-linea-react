@@ -16,7 +16,7 @@
     }
 }
 
-.texto-victoria{
+@mixin text-format {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -24,7 +24,21 @@
     left:0;
 
     background-color: $modal-color;
+}
+
+.texto-victoria{
+    @include text-format;
+
     animation: winner .2s linear;
 
 }
 
+.texto-error{
+    @include text-format;
+
+    animation: error .2s linear;
+}
+
+.goUp{
+    animation: goUp 1s linear;
+}

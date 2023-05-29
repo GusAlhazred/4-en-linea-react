@@ -21,6 +21,17 @@
     }
 }
 
+@keyframes error {
+
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 100%;
+    }
+
+}
+
 @keyframes tinkle {
     0% {
         filter: opacity(100);
@@ -30,5 +41,14 @@
     }
     100% {
         filter: opacity(100);
+    }
+}
+
+@keyframes goUp {
+    0%{
+        transform: translateY(0)
+    }
+    100%{
+        transform: translateY(-200px)
     }
 }
