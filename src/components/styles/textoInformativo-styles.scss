@@ -1,37 +1,30 @@
+@import "./animations";
+@import "./variables";
+
 .texto-informativo{
-    color: blanchedalmond;
+    color: $boar-BorderColor;
     line-height: 2.5rem;
     span{
         font-family:fantasy;
         transition: 100ms;
     }
     .jugadorRojo{
-        color: crimson;
+        color: $boarRed;
     }
     .jugadorAzul{
-        color: royalblue;
+        color: $boarBlue;
     }
 }
 
 .texto-victoria{
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
 
-    background-color: rgba(0, 0, 0, 0.671);
+    background-color: $modal-color;
     animation: winner .2s linear;
 
 }
 
-@keyframes winner {
-
-    0%{
-        opacity: 0;
-    }
-
-    100%{
-        opacity: 100%;
-    }
-}

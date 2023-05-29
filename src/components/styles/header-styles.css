@@ -1,7 +1,37 @@
+@keyframes animationButtonReset {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-color: 0% 0;
+  }
+}
+@keyframes winner {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes tinkle {
+  0% {
+    filter: opacity(100);
+  }
+  50% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(100);
+  }
+}
 .header-container {
   background-image: url(../../img/yogg-saron.jpg);
   background-position: 60% 50%;
-  box-shadow: 1px 10px 20px azure;
+  box-shadow: 1px 10px 20px blanchedalmond;
   filter: opacity(50);
 }
 .header-container h1 {
@@ -13,16 +43,4 @@
           backdrop-filter: blur(1px) grayscale(80%);
   color: blanchedalmond;
   animation: 2s ease-out infinite tinkle;
-}
-
-@keyframes tinkle {
-  0% {
-    filter: opacity(100);
-  }
-  50% {
-    filter: opacity(0);
-  }
-  100% {
-    filter: opacity(100);
-  }
 }/*# sourceMappingURL=header-styles.css.map */

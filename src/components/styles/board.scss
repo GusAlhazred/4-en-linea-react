@@ -1,6 +1,8 @@
+@import "./variables";
+
 .board{
     max-width: 1200px;
-    background-color: gold;
-    border: 5px solid blanchedalmond;
+    background-color: $boar-BackgroundColor;
+    border: 5px solid $boar-BorderColor;
     border-radius: 25px;
 }

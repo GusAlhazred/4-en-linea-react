@@ -1,3 +1,33 @@
+@keyframes animationButtonReset {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-color: 0% 0;
+  }
+}
+@keyframes winner {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes tinkle {
+  0% {
+    filter: opacity(100);
+  }
+  50% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(100);
+  }
+}
 .texto-informativo {
   color: blanchedalmond;
   line-height: 2.5rem;
@@ -16,18 +46,9 @@
 .texto-victoria {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.671);
   animation: winner 0.2s linear;
-}
-
-@keyframes winner {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
 }/*# sourceMappingURL=textoInformativo-styles.css.map */

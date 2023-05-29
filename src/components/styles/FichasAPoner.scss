@@ -1,14 +1,16 @@
+@import "./variables";
+
 .boton {
     height: 75px;
     width: 75px;
-    background-color: #282c34;
-    border: 5px solid blanchedalmond;
+    background-color: $boar-BackgroundColor;
+    border: 5px solid $boar-BorderColor;
     border-radius: 50%;
     margin: .5rem;
 }
 .boton-azul {
-    background-color: royalblue;
+    background-color: $boarBlue;
 }
 .boton-rojo {
-    background-color: crimson;
+    background-color: $boarRed;
 }

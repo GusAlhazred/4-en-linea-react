@@ -1,34 +1,3 @@
-.botonera {
-  position: relative;
-}
-.botonera .resetButton {
-  background-color: #333;
-  cursor: pointer;
-  padding: 0.5rem 1.5rem;
-  color: #eee;
-  border: rgba(255, 255, 255, 0.3882352941) solid 0.1rem;
-  border-radius: 12px;
-  font-weight: bold;
-  position: relative;
-  /* width: 30vw; */
-}
-.botonera .resetButton::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -10;
-  width: 100%;
-  height: 100%;
-  /* background: linear-gradient(45deg, crimson, royalblue, deeppink, royalblue, crimson, royalblue, deeppink, royalblue); */
-  background: linear-gradient(45deg, crimson, royalblue, deeppink, crimson, royalblue, deeppink);
-  /* background: linear-gradient(45deg, red, blue, red, blue); */
-  border-radius: 10px;
-  background-size: 800%;
-  filter: blur(20px);
-  animation: animationButtonReset 10s linear infinite;
-}
-
 @keyframes animationButtonReset {
   0% {
     background-position: 0 0;
@@ -39,4 +8,51 @@
   100% {
     background-color: 0% 0;
   }
+}
+@keyframes winner {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes tinkle {
+  0% {
+    filter: opacity(100);
+  }
+  50% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(100);
+  }
+}
+.botonera {
+  position: relative;
+  margin-top: 2rem;
+}
+.botonera .resetButton {
+  background-color: #333;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  color: #eee;
+  border: rgba(255, 255, 255, 0.3882352941) solid 0.1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  position: relative;
+}
+.botonera .resetButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, crimson, royalblue, deeppink, crimson, royalblue, deeppink);
+  border-radius: 10px;
+  background-size: 800%;
+  filter: blur(20px);
+  animation: animationButtonReset 10s linear infinite;
 }/*# sourceMappingURL=botonera.css.map */

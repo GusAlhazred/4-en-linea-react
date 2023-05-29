@@ -1,1 +1,1 @@
-{"version":3,"sources":["FichasAPoner.scss","FichasAPoner.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,WAAA;EACA,yBAAA;EACA,gCAAA;EACA,kBAAA;EACA,cAAA;ACCJ;;ADCA;EACI,2BAAA;ACEJ;;ADAA;EACI,yBAAA;ACGJ","file":"FichasAPoner.css"}
+{"version":3,"sources":["FichasAPoner.scss","FichasAPoner.css","_variables.scss"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,WAAA;EACA,sBAAA;EACA,gCAAA;EACA,kBAAA;EACA,cAAA;ACDJ;;ADGA;EACI,2BEPO;ADOX;;ADEA;EACI,yBEZM;ADaV","file":"FichasAPoner.css"}
