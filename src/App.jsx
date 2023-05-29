@@ -12,8 +12,6 @@ function App() {
   const [turn, setTurn] = useState(1);
   const [tokens, setTokens] = useState([[], [], [], [], [], [], []]);
   const [end, setEnd] = useState(false);
-  // const showVictory = useRef(null);
-  
   
   const checkVitory = () => {
     for (let x=0; x< tokens.length; x++){
@@ -43,16 +41,10 @@ function App() {
     return(end)
   }
 
-  // useEffect( () => {
-  //   if(end){
-  //     (turn-1)%2===0? showVictory.current = (<div className="texto-informativo"><span className="jugadorAzul">Ganoo</span></div>) : showVictory.current = (<div className="texto-informativo"><span className="jugadorRojo">Ganoo</span></div>);
-  //   }
-  // },[end])
-    
+  
   const manageClick = (e) => {
     const btnum = e.target.getAttribute("data-number")
     if ((tokens[btnum].length <= 5) && (!end)){
-    // if (tokens[btnum].length <= 5){
       tokens[btnum].push(turn%2);
       setTokens(tokens)
       setTurn(turn+1)
@@ -70,16 +62,7 @@ function App() {
           <button className={classes} data-number={i} onClick={manageClick} key={i}></button>
       )
   }
-  // let tokensShowed =[]
-  // let ficha= 0;
-  // for (let y=0; y<6; y++){
-  //   tokensShowed.push([])
-  //   for(let x=0; x<7; x++){
-  //     tokensShowed[y].push(
-  //       <div className={classes} key={ficha++}></div>
-  //     )
-  //   }
-  // }
+
   
   const manageReset = () => {
     setEnd(false);
